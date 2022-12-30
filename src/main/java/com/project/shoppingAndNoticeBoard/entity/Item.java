@@ -3,6 +3,7 @@ package com.project.shoppingAndNoticeBoard.entity;
 import com.project.shoppingAndNoticeBoard.constant.ItemSellStatus;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @Entity
+@NoArgsConstructor
 @Table(name = "item")
 public class Item {
 
@@ -40,12 +42,14 @@ public class Item {
     private LocalDateTime updateTime;
 
     @Builder
-    public Item(String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus) {
+    public Item(String itemNm, int price, int stockNumber, String itemDetail, ItemSellStatus itemSellStatus, LocalDateTime regTime, LocalDateTime updateTime) {
         this.itemNm = itemNm;
         this.price = price;
         this.stockNumber = stockNumber;
         this.itemDetail = itemDetail;
         this.itemSellStatus = itemSellStatus;
+        this.regTime = regTime;
+        this.updateTime = updateTime;
     }
 
 
