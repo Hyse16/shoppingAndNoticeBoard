@@ -25,8 +25,6 @@ import java.util.List;
 @SpringBootTest
 class ItemRepositoryTest {
 
-
-
     @PersistenceContext
     EntityManager em;
 
