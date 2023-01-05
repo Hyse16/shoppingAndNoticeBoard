@@ -1,5 +1,6 @@
 package com.project.shoppingAndNoticeBoard.repository;
 
+import com.project.shoppingAndNoticeBoard.Dto.ItemDto;
 import com.project.shoppingAndNoticeBoard.constant.ItemSellStatus;
 import com.project.shoppingAndNoticeBoard.entity.Item;
 import com.project.shoppingAndNoticeBoard.entity.QItem;
@@ -46,6 +47,8 @@ class ItemRepositoryTest {
         System.out.println(savedItem.toString());
 
     }
+
+
 
     public void createItemList() {
         for (int i = 1; i <= 10; i++) {
