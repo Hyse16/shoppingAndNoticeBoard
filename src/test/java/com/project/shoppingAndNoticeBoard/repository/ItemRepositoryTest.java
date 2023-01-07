@@ -130,6 +130,7 @@ class ItemRepositoryTest {
     @Test
     @DisplayName("QueryDsl 조회 테스트")
     public void queryDslTest() {
+
         this.createItemList();
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);
         QItem item = QItem.item;
