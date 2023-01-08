@@ -45,14 +45,14 @@ public class Member {
     }
 
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
-        Member member = Member.builder()
+
+        return Member.builder()
                 .name(memberFormDto.getName())
                 .email(memberFormDto.getEmail())
                 .address(memberFormDto.getAddress())
                 .role(Role.USER)
                 .password(passwordEncoder.encode(memberFormDto.getPassword()))
                 .build();
-        return member;
     }
 
 
