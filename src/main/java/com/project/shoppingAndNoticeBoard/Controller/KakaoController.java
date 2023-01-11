@@ -114,8 +114,6 @@ public class KakaoController {
 
         memberService.saveMember(member);
 
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(member.getName(), member.getPassword()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
 
         return "redirect:/";
     }
