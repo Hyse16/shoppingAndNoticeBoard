@@ -109,6 +109,7 @@ public class KakaoController {
                 .name(kakaoProfile.getKakao_account().getEmail() + "_" + kakaoProfile.getId())
                 .password(garbagePw.toString())
                 .email(kakaoProfile.getKakao_account().getEmail())
+                .oauth("kakao")
                 .build();
 
 

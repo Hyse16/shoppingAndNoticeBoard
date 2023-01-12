@@ -34,14 +34,16 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    private String oauth;
 
     @Builder
-    public Member(String name, String email, String password, String address, Role role) {
+    public Member(String name, String email, String password, String address, Role role, String oauth) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.role = role;
+        this.oauth = oauth;
     }
 
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
