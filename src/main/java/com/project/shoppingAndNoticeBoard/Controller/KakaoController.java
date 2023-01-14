@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.shoppingAndNoticeBoard.Service.MemberService;
+import com.project.shoppingAndNoticeBoard.constant.Role;
 import com.project.shoppingAndNoticeBoard.entity.KakaoProfile;
 import com.project.shoppingAndNoticeBoard.entity.Member;
 import com.project.shoppingAndNoticeBoard.entity.OAuthToken;
@@ -108,6 +109,7 @@ public class KakaoController {
         Member member = Member.builder()
                 .name(kakaoProfile.getKakao_account().getEmail() + "_" + kakaoProfile.getId())
                 .password(garbagePw.toString())
+                .role(Role.USER)
                 .email(kakaoProfile.getKakao_account().getEmail())
                 .oauth("kakao")
                 .build();
