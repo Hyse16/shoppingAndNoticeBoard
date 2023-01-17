@@ -37,13 +37,12 @@ public class Member {
     private String oauth;
 
     @Builder
-    public Member(String name, String email, String password, String address, Role role, String oauth) {
+    public Member(String name, String email, String password, String address, Role role) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.role = role;
-        this.oauth = oauth;
     }
 
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder) {
