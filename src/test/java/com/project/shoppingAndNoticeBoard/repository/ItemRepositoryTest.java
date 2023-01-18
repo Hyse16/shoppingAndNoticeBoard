@@ -2,6 +2,7 @@ package com.project.shoppingAndNoticeBoard.repository;
 
 import com.project.shoppingAndNoticeBoard.Dto.ItemDto;
 import com.project.shoppingAndNoticeBoard.constant.ItemSellStatus;
+import com.project.shoppingAndNoticeBoard.entity.BaseTimeEntity;
 import com.project.shoppingAndNoticeBoard.entity.Item;
 import com.project.shoppingAndNoticeBoard.entity.QItem;
 import com.querydsl.core.BooleanBuilder;
@@ -58,8 +59,6 @@ class ItemRepositoryTest {
                     .itemDetail("테스트 상품 상세설명" + i)
                     .stockNumber(100)
                     .itemSellStatus(ItemSellStatus.SELL)
-                    .regTime(LocalDateTime.now())
-                    .updateTime(LocalDateTime.now())
                     .build();
             Item saveItem = itemRepository.save(item);
 
@@ -132,6 +131,7 @@ class ItemRepositoryTest {
     public void queryDslTest() {
 
         this.createItemList();
+
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);
         QItem item = QItem.item;
         JPAQuery<Item> query = queryFactory.selectFrom(item)
@@ -154,8 +154,6 @@ class ItemRepositoryTest {
                     .itemDetail("테스트 상품 상세설명" + i)
                     .itemSellStatus(ItemSellStatus.SELL)
                     .stockNumber(100)
-                    .regTime(LocalDateTime.now())
-                    .updateTime(LocalDateTime.now())
                     .build();
             itemRepository.save(item);
 
@@ -168,8 +166,6 @@ class ItemRepositoryTest {
                     .itemDetail("테스트 상품 상세설명" + i)
                     .itemSellStatus(ItemSellStatus.SELL)
                     .stockNumber(100)
-                    .regTime(LocalDateTime.now())
-                    .updateTime(LocalDateTime.now())
                     .build();
             itemRepository.save(item);
         }

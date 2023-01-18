@@ -12,7 +12,7 @@ import javax.persistence.*;
 @ToString
 @Getter
 @NoArgsConstructor
-public class Cart {
+public class Cart extends BaseEntity{
 
     @Id
     @Column(name = "cart_id")

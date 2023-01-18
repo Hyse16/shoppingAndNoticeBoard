@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "orders")
 @Getter
 @NoArgsConstructor
-public class Order {
+public class Order extends BaseEntity{
     @Id
     @GeneratedValue
     private Long id;
@@ -28,19 +28,15 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
 
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @Builder
-    public Order(Member member, LocalDateTime orderDate, OrderStatus orderStatus, LocalDateTime regTime, LocalDateTime updateTime) {
+    public Order(Member member, OrderStatus orderStatus) {
         this.member = member;
         this.orderDate = orderDate;
         this.orderStatus = orderStatus;
-        this.regTime = regTime;
-        this.updateTime = updateTime;
+
     }
 }

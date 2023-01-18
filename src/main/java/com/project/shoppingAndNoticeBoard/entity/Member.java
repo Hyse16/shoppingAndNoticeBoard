@@ -15,10 +15,10 @@ import javax.persistence.*;
 @Table(name = "member")
 @Getter
 @ToString
-public class Member extends BaseEntity{
+public class Member extends BaseEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_id")
     private Long id;
 
@@ -33,8 +33,6 @@ public class Member extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    private String oauth;
 
     @Builder
     public Member(String name, String email, String password, String address, Role role) {
@@ -51,10 +49,8 @@ public class Member extends BaseEntity{
                 .name(memberFormDto.getName())
                 .email(memberFormDto.getEmail())
                 .address(memberFormDto.getAddress())
+                .password(passwordEncoder.encode(memberFormDto.getPassword()))  //암호화처리
                 .role(Role.USER)
-                .password(passwordEncoder.encode(memberFormDto.getPassword()))
                 .build();
     }
-
-
 }
