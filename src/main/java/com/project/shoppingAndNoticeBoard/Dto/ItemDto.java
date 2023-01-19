@@ -19,8 +19,4 @@ public class ItemDto {
     private String ItemDetail;
 
     private String sellStatCd;
-
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
 }
