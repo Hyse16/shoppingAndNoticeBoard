@@ -7,7 +7,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
 public class ItemDto {
 
     private Long id;
@@ -16,7 +15,16 @@ public class ItemDto {
 
     private Integer price;
 
-    private String ItemDetail;
+    private String itemDetail;
 
     private String sellStatCd;
+
+
+    @Builder
+    public ItemDto(String itemNm, Integer price, String itemDetail, String sellStatCd) {
+        this.itemNm = itemNm;
+        this.price = price;
+        this.sellStatCd = sellStatCd;
+        this.itemDetail = itemDetail;
+    }
 }
