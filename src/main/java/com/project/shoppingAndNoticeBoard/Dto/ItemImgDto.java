@@ -3,8 +3,10 @@ package com.project.shoppingAndNoticeBoard.Dto;
 import com.project.shoppingAndNoticeBoard.entity.ItemImg;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class ItemImgDto {
 
     private Long id;
