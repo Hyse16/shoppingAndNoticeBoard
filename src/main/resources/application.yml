@@ -13,6 +13,15 @@ spring:
         show_sql: true
         format_sql: true
 
+spring:
+  servlet:
+    multipart:
+      maxFileSize: 20MB
+      maxRequestSize: 100MB
+
+itemImgLocation: /Users/hyeonseung/Desktop/shopImg/item
+uploadPath: /Users/hyeonseung/Desktop/shopImg
+
 
 logging.level:
   org.hibernate.SQL: debug

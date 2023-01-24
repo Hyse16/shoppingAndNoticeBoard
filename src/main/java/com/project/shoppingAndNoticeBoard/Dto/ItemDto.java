@@ -2,11 +2,13 @@ package com.project.shoppingAndNoticeBoard.Dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
+@NoArgsConstructor
 public class ItemDto {
 
     private Long id;
