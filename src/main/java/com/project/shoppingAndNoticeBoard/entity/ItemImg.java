@@ -35,11 +35,12 @@ public class ItemImg {
     }
 
     @Builder
-    public ItemImg(String imgName, String oriImgName, String imgUrl, String repImgYn) {
+    public ItemImg(String imgName, String oriImgName, String imgUrl, String repImgYn, Item item) {
         this.imgName = imgName;
         this.oriImgName = oriImgName;
         this.imgUrl = imgUrl;
         this.repImgYn = repImgYn;
+        this.item = item;
     }
 }
 

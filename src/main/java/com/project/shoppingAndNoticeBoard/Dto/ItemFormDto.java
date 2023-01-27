@@ -3,6 +3,7 @@ package com.project.shoppingAndNoticeBoard.Dto;
 import com.project.shoppingAndNoticeBoard.constant.ItemSellStatus;
 import com.project.shoppingAndNoticeBoard.entity.Item;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
+@Data
 @NoArgsConstructor
 public class ItemFormDto {
 
