@@ -1,5 +1,6 @@
 package com.project.shoppingAndNoticeBoard.entity;
 
+import com.project.shoppingAndNoticeBoard.Dto.ItemFormDto;
 import com.project.shoppingAndNoticeBoard.constant.ItemSellStatus;
 import lombok.Builder;
 import lombok.Getter;
@@ -46,6 +47,14 @@ public class Item extends BaseEntity{
         this.stockNumber = stockNumber;
         this.itemDetail = itemDetail;
         this.itemSellStatus = itemSellStatus;
+    }
+
+    public void updateItem(ItemFormDto itemFormDto) {
+        this.itemNm = itemFormDto.getItemNm();
+        this.price = itemFormDto.getPrice();
+        this.stockNumber = itemFormDto.getStockNumber();
+        this.itemDetail = itemFormDto.getItemDetail();
+        this.itemSellStatus = itemFormDto.getItemSellStatus();
     }
 
 

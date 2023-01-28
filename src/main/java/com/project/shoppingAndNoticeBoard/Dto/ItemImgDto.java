@@ -1,11 +1,10 @@
 package com.project.shoppingAndNoticeBoard.Dto;
 
+import com.project.shoppingAndNoticeBoard.entity.Item;
 import com.project.shoppingAndNoticeBoard.entity.ItemImg;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Getter
+@Data
 @NoArgsConstructor
 public class ItemImgDto {
 
@@ -38,7 +37,7 @@ public class ItemImgDto {
         return entity;
     }
 
-    public ItemImgDto of(ItemImg entity) {
+    public static ItemImgDto of(ItemImg entity) {
         ItemImgDto dto = ItemImgDto.builder()
                 .imgName(entity.getImgName())
                 .oriImgName(entity.getOriImgName())
@@ -48,5 +47,4 @@ public class ItemImgDto {
 
         return dto;
     }
-
 }

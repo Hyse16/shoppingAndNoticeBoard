@@ -2,12 +2,15 @@ package com.project.shoppingAndNoticeBoard.entity;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "item_img")
-@Getter
+@Getter@ToString
+@NoArgsConstructor
 public class ItemImg {
 
     @Id
@@ -28,7 +31,7 @@ public class ItemImg {
     @JoinColumn(name = "item_id")
     private Item item;
 
-    public void updateImg(String oriImgName, String imgName, String imgUrl) {
+    public void updateItemImg(String oriImgName, String imgName, String imgUrl) {
         this.oriImgName = oriImgName;
         this.imgName = imgName;
         this.imgUrl = imgUrl;
